@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Webフォントの最小構成</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700"
+    />
+    <style>
+      body {
+        font-family: sans-serif;
+        max-width: 800px;
+        margin: 2rem auto;
+        padding: 0 1rem;
+        line-height: 1.8;
+      }
+
+      .webfont {
+        font-family: "Noto Sans JP", sans-serif;
+      }
+
+      h1 {
+        font-weight: 700;
+      }
+
+      .comparison {
+        display: grid;
+        gap: 1rem;
+        margin: 2rem 0;
+      }
+
+      .box {
+        padding: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+      .box h2 {
+        margin: 0 0 0.5rem;
+        font-size: 1rem;
+        color: #666;
+      }
+
+      .sample-text {
+        font-size: 1.25rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="webfont">Webフォントの最小構成デモ</h1>
+
+    <p>
+      このデモでは、Webフォント（Noto Sans
+      JP）とシステムフォントの違いを確認できます。
+    </p>
+
+    <div class="comparison">
+      <div class="box">
+        <h2>システムフォント（sans-serif）</h2>
+        <p class="sample-text">あいうえお 漢字 ABC 123</p>
+        <p class="sample-text" style="font-weight: 700">
+          太字: あいうえお 漢字 ABC 123
+        </p>
+      </div>
+
+      <div class="box webfont">
+        <h2>Webフォント（Noto Sans JP）</h2>
+        <p class="sample-text">あいうえお 漢字 ABC 123</p>
+        <p class="sample-text" style="font-weight: 700">
+          太字: あいうえお 漢字 ABC 123
+        </p>
+      </div>
+    </div>
+
+    <h2 class="webfont">確認方法</h2>
+    <ol>
+      <li>開発者ツールの「Network」タブを開く</li>
+      <li>このページを再読み込みする</li>
+      <li>fonts.googleapis.com からCSSが読み込まれていることを確認</li>
+      <li>
+        fonts.gstatic.com から .woff2 ファイルが読み込まれていることを確認
+      </li>
+    </ol>
+  </body>
+</html>
